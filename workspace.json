@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "projects": {
+    "cuddly": {
+      "root": "apps/cuddly",
+      "sourceRoot": "apps/cuddly/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/cuddly",
+            "index": "apps/cuddly/src/index.html",
+            "main": "apps/cuddly/src/main.tsx",
+            "polyfills": "apps/cuddly/src/polyfills.ts",
+            "tsConfig": "apps/cuddly/tsconfig.app.json",
+            "assets": ["apps/cuddly/src/favicon.ico", "apps/cuddly/src/assets"],
+            "styles": ["apps/cuddly/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/cuddly/src/environments/environment.ts",
+                  "with": "apps/cuddly/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "cuddly:build",
+            "hmr": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "cuddly:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/cuddly/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/cuddly"],
+          "options": {
+            "jestConfig": "apps/cuddly/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "cuddly-e2e": {
+      "root": "apps/cuddly-e2e",
+      "sourceRoot": "apps/cuddly-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/cuddly-e2e/cypress.json",
+            "tsConfig": "apps/cuddly-e2e/tsconfig.e2e.json",
+            "devServerTarget": "cuddly:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cuddly:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/cuddly-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "strict": true,
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint",
+        "strict": true
+      }
+    }
+  },
+  "defaultProject": "cuddly"
+}
