@@ -23,10 +23,12 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "dev": "concurrently -n client,api -c yellow,green \"npm start\" \"nx serve api\" "
   },
   "private": true,
   "dependencies": {
+    "concurrently": "^6.2.0",
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
     "express": "4.17.1",
