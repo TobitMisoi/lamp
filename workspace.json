@@ -8,12 +8,16 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -38,12 +42,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api"],
+          "outputs": [
+            "coverage/apps/api"
+          ],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -58,15 +66,22 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/cuddly",
             "index": "apps/cuddly/src/index.html",
             "main": "apps/cuddly/src/main.tsx",
             "polyfills": "apps/cuddly/src/polyfills.ts",
             "tsConfig": "apps/cuddly/tsconfig.app.json",
-            "assets": ["apps/cuddly/src/favicon.ico", "apps/cuddly/src/assets"],
-            "styles": ["apps/cuddly/src/styles.scss"],
+            "assets": [
+              "apps/cuddly/src/favicon.ico",
+              "apps/cuddly/src/assets"
+            ],
+            "styles": [
+              "apps/cuddly/src/styles.scss"
+            ],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -99,6 +114,7 @@
           "executor": "@nrwl/web:dev-server",
           "options": {
             "buildTarget": "cuddly:build",
+            "proxyConfig": "apps/cuddly/proxy.config.json",
             "hmr": true
           },
           "configurations": {
@@ -111,12 +127,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/cuddly/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/cuddly/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/cuddly"],
+          "outputs": [
+            "coverage/apps/cuddly"
+          ],
           "options": {
             "jestConfig": "apps/cuddly/jest.config.js",
             "passWithNoTests": true
@@ -145,7 +165,9 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/cuddly-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/cuddly-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
