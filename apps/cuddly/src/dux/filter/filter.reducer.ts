@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import { FilterAction, FilterActionType } from "./filter.actions";
 
 export interface FilterState {
