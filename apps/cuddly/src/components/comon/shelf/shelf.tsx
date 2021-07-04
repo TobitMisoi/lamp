@@ -4,7 +4,7 @@ import FilterContainer from './filter/filterContainer';
 import ProductView from './product/product';
 import { ShelfProp } from './shelfContainer';
 import { Product } from 'apps/cuddly/src/common/business-model/product';
-
+import ShelfHeader from './shelfHeader/shelfHeader';
 
 interface State {
   selectedSizes: [];
@@ -18,6 +18,7 @@ class Shelf extends React.Component<ShelfProp, State> {
         <div className="shelf"></div>
         <FilterContainer />
         <div className="shelf-container">
+          <ShelfHeader productsLength={this.props.products.length} />
           {this.props.products.map((val: Product, index: number) => {
             return (
               <ProductView
