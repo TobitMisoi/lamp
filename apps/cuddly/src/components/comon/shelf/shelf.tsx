@@ -15,19 +15,22 @@ class Shelf extends React.Component<ShelfProp, State> {
   public render(): React.ReactNode {
     return (
       <>
-        <div className="shelf"></div>
         <FilterContainer />
-        <div className="shelf-container">
-          <ShelfHeader productsLength={this.props.products.length} />
-          {this.props.products.map((val: Product, index: number) => {
-            return (
-              <ProductView
-                product={val}
-                addToCart={this.props.addToCart}
-                key={index}
-              />
-            );
-          })}
+        <ShelfHeader productsLength={this.props.products.length} />
+        <div className="shelf">
+          <div className="shelf-container">
+            {/* <div className="shelf-container__wrap"> */}
+            {this.props.products.map((val: Product, index: number) => {
+              return (
+                <ProductView
+                  product={val}
+                  addToCart={this.props.addToCart}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+          {/* </div> */}
         </div>
       </>
     );

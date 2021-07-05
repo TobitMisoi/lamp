@@ -37,6 +37,7 @@ const ProductView: React.FunctionComponent<Props> = (props) => {
       {product.isFreeShipping && (
         <div className="shelf-stopper">Free shipping</div>
       )}
+
       <div className="shelf-item__thumb">
         <img
           // TODO: add real image from backend //#region 26
@@ -44,6 +45,13 @@ const ProductView: React.FunctionComponent<Props> = (props) => {
           alt={product.title}
           title={product.title}
         />
+        <div className="action">
+          <ul>
+            <li>cart</li>
+            <li>shop</li>
+            <li>remove</li>
+          </ul>
+        </div>
       </div>
       <p className="shelf-item__title">{product.title}</p>
       <div className="shelf-item__price">

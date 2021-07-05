@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './styles';
+import { makeStyles } from '@material-ui/styles';
 
 interface Props {
   label: string;
@@ -9,40 +11,36 @@ interface State {
   isChecked: boolean;
 }
 
-class Checkbox extends React.Component<Props, State> {
-  public state = {
-    isChecked: false,
-  };
+const useStyles = makeStyles(styles);
 
-  public render() {
-    const { label } = this.props;
-    const { isChecked } = this.state;
-    return (
-      <div className="checkbox">
-        <label htmlFor="">
-          <input
-            type="checkbox"
-            name={label}
-            id=""
-            value={label}
-            onChange={this.toggleCheckboxChange}
-          />
-        </label>
-      </div>
-    );
-  }
+const Checkbox: React.FC<Props> = (props) => {
+  const { label } = props;
+  const classes = useStyles();
+  const [isChecked, setIsChecked] = React.useState<State | false>(false);
 
-  private toggleCheckboxChange = () => {
-    const { handleCheckboxChange, label } = this.props;
+  const toggleCheckboxChange = () => {
+    const { handleCheckboxChange, label } = props;
 
-    //   TODO: //#endregion25
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    this.setState(({ isChecked }: any) => ({
+    setIsChecked((isChecked) => ({
       isChecked: !isChecked,
     }));
 
     handleCheckboxChange(label);
   };
-}
+
+  return (
+    <div className={classes.checkbox}>
+      <label htmlFor="">
+        <input
+          type="checkbox"
+          name={label}
+          id={label}
+          value={label}
+          onChange={toggleCheckboxChange}
+        />
+      </label>
+    </div>
+  );
+};
 
 export default Checkbox;
