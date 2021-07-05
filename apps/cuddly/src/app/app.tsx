@@ -4,12 +4,13 @@ import ShelfContainer from '../components/comon/shelf/shelfContainer';
 import { AddCartProductActions } from '../dux/cartProduct/cart.product.action';
 import { setProducts } from '../dux/product/product.dispatcher';
 import rootStore from '../dux/rootStore';
-import { cartProduct, product, product2 } from './data';
+import { cartProduct, product, product2, product3 } from './data';
+import '../assets/styles/index.scss';
 
 function App() {
   React.useEffect(() => {
     rootStore.dispatch(new AddCartProductActions(cartProduct));
-    rootStore.dispatch(setProducts([product, product2]));
+    rootStore.dispatch(setProducts([product, product2, product3]));
   }, []);
 
   return (
