@@ -1,0 +1,16 @@
+@import "./internal.import";
+@import "./font";
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // font-family: "Zen Loop", cursive;
+  font-family: 'Padauk', sans-serif;
+}
+
+
+li {
+  list-style: none;
+}

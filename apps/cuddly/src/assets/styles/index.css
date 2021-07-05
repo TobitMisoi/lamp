@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap");
+.shelf {
+  border: 1px solid;
+}
+
+.shelf .shelf-container {
+  border: 1px solid;
+  display: b;
+  overflow: hidden;
+}
+
+.shelf .shelf-container .shelf-container__wrap {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  width: 1220px;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.filter {
+  border: 1px solid;
+  position: absolute;
+}
+
+.shelf-item {
+  width: 100%;
+  background: #14111712;
+}
+
+.shelf-item .shelf-item__thumb {
+  position: relative;
+}
+
+.shelf-item .shelf-item__thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.shelf-item .shelf-item__thumb img:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Zen Loop", cursive;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=index.css.map */
