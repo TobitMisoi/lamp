@@ -7,7 +7,8 @@ export enum CartProductActionTypes {
 }
 
 export class AddCartProductActions implements Action {
-  public readonly type!: CartProductActionTypes.ADD_PRODUCT;
+  public readonly type: CartProductActionTypes =
+    CartProductActionTypes.ADD_PRODUCT;
   constructor(public product: CartProduct) {}
 }
 

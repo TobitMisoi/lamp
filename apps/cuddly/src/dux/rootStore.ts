@@ -9,11 +9,16 @@ import {
 import thunk from "redux-thunk";
 import { reducers } from "./rootReducer";
 
+// const devToolsExtension = (window as any).__REDUX_DEVTOOLS_EXTENSION__;
+
 const simplifyObjectMiddleware = () => (next: Dispatch<AnyAction>) => (
   action: AnyAction
 ) => {
   next({ ...action });
 };
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+// const enhancers: Function[] = [devToolsExtension({ name: "shopping cart" })];
 
 const middleware: Middleware[] = [thunk, simplifyObjectMiddleware];
 
