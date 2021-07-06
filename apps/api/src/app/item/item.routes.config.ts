@@ -7,9 +7,14 @@ export class ItemRoutes extends CommonRoutesConfig {
   }
 
   configureRoutes() {
-    this.app.route(`/items`).get((req, res) => {
-      res.status(200).send({ message: "Items" });
-    });
+    this.app
+      .route(`/items`)
+      .get((req, res) => {
+        res.status(200).send({ message: "Items" });
+      })
+      .post();
+
+    this.app.route(`/items/:id`).put().delete();
 
     return this.app;
   }

@@ -8,10 +8,13 @@ export class CartRoutes extends CommonRoutesConfig {
 
   configureRoutes() {
     this.app
-      .route(`/cart`)
+      .route(`/cart/:id`)
       .get((req: express.Request, res: express.Response) => {
         res.status(200).send({ message: "Cart" });
-      });
+      })
+      .post();
+
+    this.app.route(`/cart/:userId/:itemId`);
 
     return this.app;
   }

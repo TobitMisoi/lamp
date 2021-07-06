@@ -7,9 +7,12 @@ export class OrderRoutes extends CommonRoutesConfig {
   }
 
   configureRoutes() {
-    this.app.route(`/order`).get((req, res) => {
-      res.status(200).send({ message: "Orders" });
-    });
+    this.app
+      .route(`/order/:id`)
+      .get((req, res) => {
+        res.status(200).send({ message: "Orders" });
+      })
+      .post();
 
     return this.app;
   }
