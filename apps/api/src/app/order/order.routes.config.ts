@@ -1,7 +1,7 @@
 import * as express from "express";
 import { CommonRoutesConfig } from "../../common/common.routes.config";
 
-export class OrderRoutesConfig extends CommonRoutesConfig {
+export class OrderRoutes extends CommonRoutesConfig {
   constructor(app: express.Application) {
     super(app, "OrderRoutes");
   }

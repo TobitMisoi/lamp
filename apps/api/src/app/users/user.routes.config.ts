@@ -6,7 +6,7 @@ export class UserRoutes extends CommonRoutesConfig {
     super(app, "UserRoutes");
   }
 
-  configureRoutes() {
+  configureRoutes(): express.Application {
     this.app.route(`/user`).get((req, res) => {
       res.status(200).send({ message: "User routes" });
     });
