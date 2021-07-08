@@ -1,8 +1,8 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import React from "react";
-import { CartProps } from "./cartContainer";
-import CartProductContainer from "./cartProduct/cart.product.container";
-import { CartProduct } from "apps/cuddly/src/common/business-model/cartProducts";
+import React from 'react';
+import { CartProps } from './cartContainer';
+import CartProductContainer from './cartProduct/cart.product.container';
+import { CartProduct } from 'apps/cuddly/src/common/business-model/cartProducts';
 
 interface State {
   isOpen: boolean;
@@ -17,11 +17,11 @@ class Cart extends React.Component<CartProps, State> {
     const { isOpen } = this.state;
 
     // classnames
-    const classes = isOpen ? "float-cart" : "float-cart float-cart--cart-close";
-    const trolleyCss = isOpen ? "trolley" : "trolley trolley--cart-close";
+    const classes = isOpen ? 'float-cart' : 'float-cart float-cart--cart-close';
+    const trolleyCss = isOpen ? 'trolley' : 'trolley trolley--cart-close';
     const trolleyItemQuantityCss = isOpen
-      ? "item-quantity-icon"
-      : "item-quantity-icon item-quantity-icon--cart-close";
+      ? 'item-quantity-icon'
+      : 'item-quantity-icon item-quantity-icon--cart-close';
 
     const cartProducts = [];
 
@@ -39,17 +39,17 @@ class Cart extends React.Component<CartProps, State> {
 
     return (
       <div className={classes}>
-        <div className='cart-close-button' onClick={this.toggleCartDrawer}>
+        <div className="cart-close-button" onClick={this.toggleCartDrawer}>
           X
         </div>
-        <div className='float-cart_content'>
-          <div className='float-cart_header'>
+        <div className="float-cart_content">
+          <div className="float-cart_header">
             <div className={trolleyCss} onClick={this.toggleCartDrawer}>
               <span className={trolleyItemQuantityCss}>{itemQuantity}</span>
             </div>
-            <span className='header-title'>Cart</span>
+            <span className="header-title">Cart</span>
           </div>
-          <div className='cart-shelf'>
+          <div className="cart-shelf">
             {cartProducts.map((val, index) => (
               <CartProductContainer key={index} product={val} />
             ))}
