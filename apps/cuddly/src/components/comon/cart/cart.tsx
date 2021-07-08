@@ -3,7 +3,6 @@ import React from "react";
 import { CartProps } from "./cartContainer";
 import CartProductContainer from "./cartProduct/cart.product.container";
 import { CartProduct } from "apps/cuddly/src/common/business-model/cartProducts";
-import "./styles.scss";
 
 interface State {
   isOpen: boolean;
