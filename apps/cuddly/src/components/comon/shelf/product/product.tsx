@@ -13,6 +13,8 @@ interface Props {
 const ProductView: React.FunctionComponent<Props> = (props) => {
   const { addToCart, product } = props;
 
+  console.log(product.currencyId);
+
   const formattedPrice = product.price;
   let productInstallment;
 
@@ -29,15 +31,7 @@ const ProductView: React.FunctionComponent<Props> = (props) => {
   }
 
   return (
-    <div
-      className="shelf-item"
-      onClick={() => addToCart(product, 1)}
-      data-sku={product.sku}
-    >
-      {product.isFreeShipping && (
-        <div className="shelf-stopper">Free shipping</div>
-      )}
-
+    <div className="shelf-item" data-sku={product.sku}>
       <div className="shelf-item__thumb">
         <img
           // TODO: add real image from backend //#region 26
@@ -47,7 +41,7 @@ const ProductView: React.FunctionComponent<Props> = (props) => {
         />
         <div className="action">
           <ul>
-            <li>cart</li>
+            <li onClick={() => addToCart(product, 1)}>cart</li>
             <li>shop</li>
             <li>remove</li>
           </ul>
@@ -58,11 +52,13 @@ const ProductView: React.FunctionComponent<Props> = (props) => {
         <div className="val">
           <small>{product.currencyFormat}</small>
           <b>{formattedPrice}</b>
-          <span>{formattedPrice}</span>
+          <span>{product.currencyFormat + product.originalPrice}</span>
         </div>
-        {productInstallment}
+        {/* {productInstallment} */}
+        {product.isFreeShipping && (
+          <div className="shelf-stopper">Free delivery</div>
+        )}
       </div>
-      <div className="shelf-item__buy-btn">Add to cart</div>
     </div>
   );
 };

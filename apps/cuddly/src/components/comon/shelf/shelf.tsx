@@ -17,8 +17,8 @@ class Shelf extends React.Component<ShelfProp, State> {
       <>
         <FilterContainer />
         <ShelfHeader productsLength={this.props.products.length} />
-        <div className="shelf">
-          <div className="shelf-container">
+        <div className="shelf row">
+          <div className="shelf-container row">
             {/* <div className="shelf-container__wrap"> */}
             {this.props.products.map((val: Product, index: number) => {
               return (
