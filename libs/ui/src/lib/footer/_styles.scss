@@ -33,6 +33,53 @@ footer {
         }
       }
     }
+    &-subscribe {
+      display: block;
+      position: relative;
+      text-align: center;
+      padding: 56px 0 34px 0;
+      p {
+        color: #999;
+        padding: 0.7rem 0;
+      }
+      .input-factor {
+        align-items: center;
+        display: flex;
+        width: fit-content;
+        justify-content: center;
+        margin: 0 auto;
+        input {
+          outline: none;
+          border: none;
+          height: 100%;
+          padding: 0.6rem;
+          width: 412px;
+          background: white;
+          font-size: 18px;
+        }
+        button {
+          cursor: pointer;
+          outline: none;
+          border: none;
+          background: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #141414;
+          color: #f8f8f8;
+          font-size: 18px;
+          padding: 0.6rem;
+          border-top-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+          span {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 6px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
     &-down {
       padding: 1rem 0;
       text-align: center;
