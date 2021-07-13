@@ -7,6 +7,7 @@ export interface Product {
   installments: number;
   isFreeShipping: boolean;
   price: number;
+  originalPrice: number;
   sku: number;
   style: string;
   title: string;
