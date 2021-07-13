@@ -1,4 +1,10 @@
-import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
+import {
+  FaTwitter,
+  FaInstagram,
+  FaFacebook,
+  FaArrowRight,
+} from 'react-icons/fa';
+import { BsArrowRight } from 'react-icons/bs';
 /* eslint-disable-next-line */
 export interface FooterProps {}
 
@@ -47,6 +53,19 @@ export function Footer(props: FooterProps) {
               <FaTwitter />
             </li>
           </ul>
+        </div>
+      </div>
+      <div className="footer-subscribe">
+        <h2>Sign up now &amp; get 15% off</h2>
+        <p>Be the first to know about our new arrivals and exclusive offers.</p>
+        <div className="input-factor">
+          <input type="text" placeholder="example@gmail.com" />
+          <button>
+            Sign Up
+            <span>
+              <BsArrowRight />
+            </span>
+          </button>
         </div>
       </div>
       <div className="footer-down">
