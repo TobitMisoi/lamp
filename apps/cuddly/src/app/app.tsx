@@ -6,6 +6,7 @@ import { setProducts } from '../dux/product/product.dispatcher';
 import rootStore from '../dux/rootStore';
 import { cartProduct, product, product2, product3 } from './data';
 import '../assets/styles/index.scss';
+import { Footer, Header } from '@cuddly/ui';
 
 function App() {
   React.useEffect(() => {
@@ -15,8 +16,10 @@ function App() {
 
   return (
     <div className="App">
-      <CartContainer />
+      <Header />
+      {/* <CartContainer /> */}
       <ShelfContainer />
+      <Footer />
     </div>
   );
 }
