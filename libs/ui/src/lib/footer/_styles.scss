@@ -1,0 +1,41 @@
+footer {
+  background: $fhBg;
+  .footer {
+    &-content {
+      max-width: 1332px;
+      padding: 2rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      margin: 0 auto;
+      align-items: center;
+      text-align: center;
+      .fc {
+        &-1 {
+          padding: 1rem 0;
+          h1 {
+            opacity: 0.5;
+            color: #999;
+          }
+        }
+        &-3 {
+          a {
+            color: #999;
+            text-decoration: none;
+          }
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            li {
+              margin-right: 9px;
+            }
+          }
+        }
+      }
+    }
+    &-down {
+      padding: 1rem 0;
+      text-align: center;
+    }
+  }
+}
