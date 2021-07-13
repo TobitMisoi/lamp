@@ -39,6 +39,9 @@
     "cuddly-e2e": {
       "tags": [],
       "implicitDependencies": ["cuddly"]
+    },
+    "ui": {
+      "tags": []
     }
   }
 }
