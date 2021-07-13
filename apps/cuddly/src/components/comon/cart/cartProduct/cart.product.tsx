@@ -46,11 +46,11 @@ class CartProductView extends React.Component<CartProductProps, State> {
   }
 
   private toggleMouseOverState = () => {
-    this.setState((prev) => {
+    this.setState((prev) =>
       this.setState({
         isOverRemoveIcon: !prev.isOverRemoveIcon,
-      });
-    });
+      })
+    );
   };
 }
 

@@ -1,8 +1,8 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { connect } from "react-redux";
-import CartProductView from "./cart.product";
-import { CartProduct } from "apps/cuddly/src/common/business-model/cartProducts";
-import { removeCartProduct } from "apps/cuddly/src/dux/cartProduct/cart.product.dispatcher";
+import { connect } from 'react-redux';
+import CartProductView from './cart.product';
+import { CartProduct } from 'apps/cuddly/src/common/business-model/cartProducts';
+import { removeCartProduct } from 'apps/cuddly/src/dux/cartProduct/cart.product.dispatcher';
 
 type removeCartProductDispatchProp = (
   cartProduct: CartProduct,
