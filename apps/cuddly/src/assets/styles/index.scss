@@ -1,5 +1,7 @@
+@import "./variables";
 @import "./internal.import";
 @import "./font";
+
 *,
 html,
 body {
@@ -7,9 +9,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   // font-family: "Zen Loop", cursive;
-  font-family: 'Padauk', sans-serif;
+  font-family: "Padauk", sans-serif;
 }
-
 
 li {
   list-style: none;
